@@ -1,0 +1,41 @@
+. {
+  background-color: #3498db;
+}
+
+.section-login {
+  margin-top: 80px;
+}
+
+.nav-header {
+  background-color: #3498db;
+}
+
+.nav-header {
+  color: #fff;
+}
+
+.nav-header .head {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.no-border {
+  border-radius: 0px;
+}
+
+.btn-biru {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.btn-biru:hover {
+  background-color: #1872ad;
+  color: #fff;
+}
+
+.badge-custom {
+  border-radius: 0px;
+  padding: 12px;
+  border: 1px solid #28a745;
+}
+/*# sourceMappingURL=main.css.map */
