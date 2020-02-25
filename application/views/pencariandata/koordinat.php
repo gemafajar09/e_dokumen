@@ -37,11 +37,11 @@ if ($this->session->flashdata('pesan') == TRUE) {
                 <td><?php echo $row->koordinat_latitude; ?></td>
                 <td><?php echo $row->koordinat_longtitude; ?></td>
                 <td>
-                  <button type="button" data-toggle="modal" style="width: 70px" data-target="#edit_koordinat" onclick="ambilDataKoordinat('<?php echo $no ?>')" class="btn btn-success">Edit</button>
+                  <button type="button" data-toggle="modal" style="width: 70px" data-target="#edit_koordinat" onclick="ambilDataKoordinat('<?php echo $no ?>')" class="btn btn-success  btn-sm">Edit</button>
 
-                  <a href="<?php echo base_url('hkoordinat/' . $row->koordinat_id) ?>" class="btn btn-danger">Hapus</a>
+                  <a href="<?php echo base_url('hkoordinat/' . $row->koordinat_id) ?>" class="btn btn-danger  btn-sm">Hapus</a>
 
-                  <!--               <?php echo anchor('Pencariandata/hapus_koordinat/' . $row->koordinat_id, '<i class="fa fa-trash btn btn-danger"></i>', array('onclick' => "return confirm('Yakin Hapus?')")); ?> -->
+                  <!--               <?php echo anchor('Pencariandata/hapus_koordinat/' . $row->koordinat_id, '<i class="fa fa-trash btn btn-danger  btn-sm"></i>', array('onclick' => "return confirm('Yakin Hapus?')")); ?> -->
 
                 </td>
               </tr>
@@ -60,7 +60,7 @@ if ($this->session->flashdata('pesan') == TRUE) {
       <div class="modal-content">
         <div class="modal-header">
           
-            <h3>Edit Koordinat</h3>
+            <h4>Edit Koordinat</h4>
           
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>

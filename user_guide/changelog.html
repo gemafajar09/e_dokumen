@@ -463,7 +463,7 @@
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-1-10">
-<h3>Bug fixes for 3.1.10<a class="headerlink" href="#bug-fixes-for-3-1-10" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.1.10<a class="headerlink" href="#bug-fixes-for-3-1-10" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#5526) - <a class="reference internal" href="libraries/sessions.html"><span class="doc">Session Library</span></a> had a syntax error in its ‘memcached’ driver.</li>
 <li>Fixed a bug (#5542) - <a class="reference internal" href="database/forge.html"><span class="doc">Database Forge</span></a> method <code class="docutils literal"><span class="pre">modify_column()</span></code> always made fields <code class="docutils literal"><span class="pre">NOT</span> <span class="pre">NULL</span></code> when attempting to modify their nullable property under PostgreSQL.</li>
@@ -500,7 +500,7 @@
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-1-9">
-<h3>Bug fixes for 3.1.9<a class="headerlink" href="#bug-fixes-for-3-1-9" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.1.9<a class="headerlink" href="#bug-fixes-for-3-1-9" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a regression (#5448) - <a class="reference internal" href="database/query_builder.html"><span class="doc">Query Builder</span></a> methods <code class="docutils literal"><span class="pre">like()</span></code>, <code class="docutils literal"><span class="pre">or_like()</span></code> (and siblings) didn’t apply <em>dbprefix</em> or identifier escaping.</li>
 <li>Fixed a regression (#5462) - <a class="reference internal" href="database/query_builder.html"><span class="doc">Query Builder</span></a> methods <code class="docutils literal"><span class="pre">like()</span></code>, <code class="docutils literal"><span class="pre">or_like()</span></code> (and siblings) produced incorrect SQL syntax when used with <code class="docutils literal"><span class="pre">'before'</span></code> as the third parameter.</li>
@@ -528,7 +528,7 @@
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-1-8">
-<h3>Bug fixes for 3.1.8<a class="headerlink" href="#bug-fixes-for-3-1-8" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.1.8<a class="headerlink" href="#bug-fixes-for-3-1-8" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug where <a class="reference internal" href="libraries/form_validation.html"><span class="doc">Form Validation Library</span></a>, <a class="reference internal" href="libraries/email.html"><span class="doc">Email Library</span></a> tried to use <code class="docutils literal"><span class="pre">INTL_IDNA_VARIANT_UTS46</span></code> when it was undeclared.</li>
 <li>Fixed a bug where <a class="reference internal" href="database/query_builder.html"><span class="doc">Query Builder</span></a> methods <code class="docutils literal"><span class="pre">where()</span></code>, <code class="docutils literal"><span class="pre">having()</span></code> treated values passed to them as arbitrary SQL.</li>
@@ -554,7 +554,7 @@
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-1-7">
-<h3>Bug fixes for 3.1.7<a class="headerlink" href="#bug-fixes-for-3-1-7" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.1.7<a class="headerlink" href="#bug-fixes-for-3-1-7" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a regression (#5276) - <a class="reference internal" href="database/utilities.html"><span class="doc">Database Utilities</span></a> method <code class="docutils literal"><span class="pre">backup()</span></code> generated incorrect <code class="docutils literal"><span class="pre">INSERT</span></code> statements with the ‘mysqli’ driver.</li>
 <li>Fixed a regression where <a class="reference internal" href="database/results.html"><span class="doc">Database Results</span></a> method <code class="docutils literal"><span class="pre">field_data()</span></code> returned incorrect type names.</li>
@@ -582,7 +582,7 @@
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-1-6">
-<h3>Bug fixes for 3.1.6<a class="headerlink" href="#bug-fixes-for-3-1-6" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.1.6<a class="headerlink" href="#bug-fixes-for-3-1-6" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#5164) - <a class="reference internal" href="libraries/loader.html"><span class="doc">Loader Library</span></a> method <code class="docutils literal"><span class="pre">library()</span></code> ignored requests to load libraries previously assigned to super-object properties named differently than the library name.</li>
 <li>Fixed a bug (#5168) - <a class="reference internal" href="database/query_builder.html"><span class="doc">Query Builder</span></a> method <code class="docutils literal"><span class="pre">count_all_results()</span></code> produced erroneous queries on Microsoft SQL Server when <code class="docutils literal"><span class="pre">ORDER</span> <span class="pre">BY</span></code> clauses are cached.</li>
@@ -611,7 +611,7 @@
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-1-5">
-<h3>Bug fixes for 3.1.5<a class="headerlink" href="#bug-fixes-for-3-1-5" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.1.5<a class="headerlink" href="#bug-fixes-for-3-1-5" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#5070) - <a class="reference internal" href="libraries/email.html"><span class="doc">Email Library</span></a> didn’t properly detect 7-bit encoding.</li>
 <li>Fixed a bug (#5084) - <a class="reference internal" href="libraries/xmlrpc.html"><span class="doc">XML-RPC Library</span></a> errored because of a variable name typo.</li>
@@ -640,7 +640,7 @@
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-1-4">
-<h3>Bug fixes for 3.1.4<a class="headerlink" href="#bug-fixes-for-3-1-4" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.1.4<a class="headerlink" href="#bug-fixes-for-3-1-4" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a regression (#4975) - <a class="reference internal" href="libraries/loader.html"><span class="doc">Loader Library</span></a> couldn’t handle objects passed as view variables.</li>
 <li>Fixed a bug (#4977) - <a class="reference internal" href="libraries/loader.html"><span class="doc">Loader Library</span></a> method <code class="docutils literal"><span class="pre">helper()</span></code> could accept any character as a filename extension separator.</li>
@@ -681,7 +681,7 @@
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-1-3">
-<h3>Bug fixes for 3.1.3<a class="headerlink" href="#bug-fixes-for-3-1-3" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.1.3<a class="headerlink" href="#bug-fixes-for-3-1-3" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#4886) - <a class="reference internal" href="database/index.html"><span class="doc">Database Library</span></a> didn’t differentiate bind markers inside double-quoted strings in queries.</li>
 <li>Fixed a bug (#4890) - <a class="reference internal" href="libraries/xmlrpc.html"><span class="doc">XML-RPC Library</span></a> didn’t work on PHP 7.</li>
@@ -721,7 +721,7 @@
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-1-2">
-<h3>Bug fixes for 3.1.2<a class="headerlink" href="#bug-fixes-for-3-1-2" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.1.2<a class="headerlink" href="#bug-fixes-for-3-1-2" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a regression (#4874) - <a class="reference internal" href="libraries/sessions.html"><span class="doc">Session Library</span></a> didn’t take into account <code class="docutils literal"><span class="pre">session.hash_bits_per_character</span></code> when validating session IDs.</li>
 <li>Fixed a bug (#4871) - <a class="reference internal" href="database/query_builder.html"><span class="doc">Query Builder</span></a> method <code class="docutils literal"><span class="pre">update_batch()</span></code> didn’t properly handle identifier escaping.</li>
@@ -748,7 +748,7 @@ and <a class="reference external" href="https://tools.ietf.org/html/rfc6585">658
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-1-1">
-<h3>Bug fixes for 3.1.1<a class="headerlink" href="#bug-fixes-for-3-1-1" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.1.1<a class="headerlink" href="#bug-fixes-for-3-1-1" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#4732) - <a class="reference internal" href="libraries/sessions.html"><span class="doc">Session Library</span></a> triggered errors while writing data for a newly-created sessions with the ‘memcached’ driver.</li>
 <li>Fixed a regression (#4736) - <a class="reference internal" href="libraries/image_lib.html"><span class="doc">Image Manipulation Library</span></a> processing via ImageMagick didn’t work.</li>
@@ -800,7 +800,7 @@ and <a class="reference external" href="https://tools.ietf.org/html/rfc6585">658
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-1-0">
-<h3>Bug fixes for 3.1.0<a class="headerlink" href="#bug-fixes-for-3-1-0" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.1.0<a class="headerlink" href="#bug-fixes-for-3-1-0" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug where <a class="reference internal" href="libraries/image_lib.html"><span class="doc">Image Manipulation Library</span></a> didn’t escape image source paths passed to ImageMagick as shell arguments.</li>
 <li>Fixed a bug (#861) - <a class="reference internal" href="database/forge.html"><span class="doc">Database Forge</span></a> method <code class="docutils literal"><span class="pre">create_table()</span></code> incorrectly accepts field width constraints for MSSQL/SQLSRV integer-type columns.</li>
@@ -838,7 +838,7 @@ and <a class="reference external" href="https://tools.ietf.org/html/rfc6585">658
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-0-6">
-<h3>Bug fixes for 3.0.6<a class="headerlink" href="#bug-fixes-for-3-0-6" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.0.6<a class="headerlink" href="#bug-fixes-for-3-0-6" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#4516) - <a class="reference internal" href="libraries/form_validation.html"><span class="doc">Form Validation Library</span></a> always accepted empty array inputs.</li>
 <li>Fixed a bug where <a class="reference internal" href="libraries/sessions.html"><span class="doc">Session Library</span></a> allowed accessing <code class="docutils literal"><span class="pre">$_SESSION</span></code> values as class properties but <code class="docutils literal"><span class="pre">isset()</span></code> didn’t work on them.</li>
@@ -868,7 +868,7 @@ and <a class="reference external" href="https://tools.ietf.org/html/rfc6585">658
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-0-5">
-<h3>Bug fixes for 3.0.5<a class="headerlink" href="#bug-fixes-for-3-0-5" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.0.5<a class="headerlink" href="#bug-fixes-for-3-0-5" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#4391) - <a class="reference internal" href="libraries/email.html"><span class="doc">Email Library</span></a> method <code class="docutils literal"><span class="pre">reply_to()</span></code> didn’t apply Q-encoding.</li>
 <li>Fixed a bug (#4384) - <a class="reference internal" href="libraries/pagination.html"><span class="doc">Pagination Library</span></a> ignored (possible) <em>cur_page</em> configuration value.</li>
@@ -912,7 +912,7 @@ and <a class="reference external" href="https://tools.ietf.org/html/rfc6585">658
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-0-4">
-<h3>Bug fixes for 3.0.4<a class="headerlink" href="#bug-fixes-for-3-0-4" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.0.4<a class="headerlink" href="#bug-fixes-for-3-0-4" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#4212) - <a class="reference internal" href="database/query_builder.html"><span class="doc">Query Builder</span></a> method <code class="docutils literal"><span class="pre">count_all_results()</span></code> could fail if an <code class="docutils literal"><span class="pre">ORDER</span> <span class="pre">BY</span></code> condition is used.</li>
 <li>Fixed a bug where <a class="reference internal" href="helpers/form_helper.html"><span class="doc">Form Helper</span></a> functions <a class="reference internal" href="helpers/form_helper.html#set_checkbox" title="set_checkbox"><code class="xref php php-func docutils literal"><span class="pre">set_checkbox()</span></code></a>, <a class="reference internal" href="helpers/form_helper.html#set_radio" title="set_radio"><code class="xref php php-func docutils literal"><span class="pre">set_radio()</span></code></a> didn’t “uncheck” inputs on a submitted form if the default state is “checked”.</li>
@@ -955,7 +955,7 @@ and <a class="reference external" href="https://tools.ietf.org/html/rfc6585">658
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-0-3">
-<h3>Bug fixes for 3.0.3<a class="headerlink" href="#bug-fixes-for-3-0-3" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.0.3<a class="headerlink" href="#bug-fixes-for-3-0-3" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#4170) - <a class="reference internal" href="database/index.html"><span class="doc">Database</span></a> method <code class="docutils literal"><span class="pre">insert_id()</span></code> could return an identity from the wrong scope with the ‘sqlsrv’ driver.</li>
 <li>Fixed a bug (#4179) - <a class="reference internal" href="libraries/sessions.html"><span class="doc">Session Library</span></a> doesn’t properly maintain its state after ID regeneration with the ‘database’ driver on PHP 7.</li>
@@ -984,7 +984,7 @@ and <a class="reference external" href="https://tools.ietf.org/html/rfc6585">658
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-0-2">
-<h3>Bug fixes for 3.0.2<a class="headerlink" href="#bug-fixes-for-3-0-2" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.0.2<a class="headerlink" href="#bug-fixes-for-3-0-2" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#2284) - <a class="reference internal" href="database/index.html"><span class="doc">Database</span></a> method <code class="docutils literal"><span class="pre">protect_identifiers()</span></code> breaks when <a class="reference internal" href="database/query_builder.html"><span class="doc">Query Builder</span></a> isn’t enabled.</li>
 <li>Fixed a bug (#4052) - <a class="reference internal" href="general/routing.html"><span class="doc">Routing</span></a> with anonymous functions didn’t work for routes that don’t use regular expressions.</li>
@@ -1043,7 +1043,7 @@ and <a class="reference external" href="https://tools.ietf.org/html/rfc6585">658
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-0-1">
-<h3>Bug fixes for 3.0.1<a class="headerlink" href="#bug-fixes-for-3-0-1" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.0.1<a class="headerlink" href="#bug-fixes-for-3-0-1" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#3733) - Autoloading of libraries with aliases didn’t work, although it was advertised to.</li>
 <li>Fixed a bug (#3744) - Redis <a class="reference internal" href="libraries/caching.html"><span class="doc">Caching</span></a> driver didn’t handle authentication failures properly.</li>
@@ -1663,7 +1663,7 @@ Only entries in <code class="docutils literal"><span class="pre">$autoload['libr
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-3-0">
-<h3>Bug fixes for 3.0<a class="headerlink" href="#bug-fixes-for-3-0" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 3.0<a class="headerlink" href="#bug-fixes-for-3-0" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug where <code class="docutils literal"><span class="pre">unlink()</span></code> raised an error if cache file did not exist when you try to delete it.</li>
 <li>Fixed a bug (#181) - a typo in the form validation language file.</li>
@@ -1881,7 +1881,7 @@ Only entries in <code class="docutils literal"><span class="pre">$autoload['libr
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-2-2-2">
-<h3>Bug fixes for 2.2.2<a class="headerlink" href="#bug-fixes-for-2-2-2" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 2.2.2<a class="headerlink" href="#bug-fixes-for-2-2-2" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#3665) - <code class="docutils literal"><span class="pre">CI_Security::entity_decode()</span></code> triggered warnings under some circumstances.</li>
 </ul>
@@ -1898,7 +1898,7 @@ Only entries in <code class="docutils literal"><span class="pre">$autoload['libr
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-2-2-1">
-<h3>Bug fixes for 2.2.1<a class="headerlink" href="#bug-fixes-for-2-2-1" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 2.2.1<a class="headerlink" href="#bug-fixes-for-2-2-1" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#3094) - Internal method <code class="docutils literal"><span class="pre">CI_Input::_clean_input_data()</span></code> breaks encrypted session cookies.</li>
 <li>Fixed a bug (#2268) - <a class="reference internal" href="libraries/security.html"><span class="doc">Security Library</span></a> method <code class="docutils literal"><span class="pre">xss_clean()</span></code> didn’t properly match JavaScript events.</li>
@@ -1925,7 +1925,7 @@ Only entries in <code class="docutils literal"><span class="pre">$autoload['libr
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-2-2-0">
-<h3>Bug fixes for 2.2.0<a class="headerlink" href="#bug-fixes-for-2-2-0" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 2.2.0<a class="headerlink" href="#bug-fixes-for-2-2-0" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed an edge case (#2583) in the <a class="reference internal" href="libraries/email.html"><span class="doc">Email Library</span></a> where <cite>Suhosin &lt;http://www.hardened-php.net/suhosin/&gt;</cite> blocked messages sent via <code class="docutils literal"><span class="pre">mail()</span></code> due to trailing newspaces in headers.</li>
 <li>Fixed a bug (#696) - make <code class="docutils literal"><span class="pre">oci_execute()</span></code> calls inside <code class="docutils literal"><span class="pre">num_rows()</span></code> non-committing, since they are only there to reset which row is next in line for oci_fetch calls and thus don’t need to be committed.</li>
@@ -1945,7 +1945,7 @@ Only entries in <code class="docutils literal"><span class="pre">$autoload['libr
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-2-1-4">
-<h3>Bug fixes for 2.1.4<a class="headerlink" href="#bug-fixes-for-2-1-4" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 2.1.4<a class="headerlink" href="#bug-fixes-for-2-1-4" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#1936) - <a class="reference internal" href="libraries/migration.html"><span class="doc">Migration Library</span></a> method <code class="docutils literal"><span class="pre">latest()</span></code> had a typo when retrieving language values.</li>
 <li>Fixed a bug (#2021) - <a class="reference internal" href="libraries/migration.html"><span class="doc">Migration Library</span></a> configuration file was mistakenly using Windows style line feeds.</li>
@@ -1964,7 +1964,7 @@ Only entries in <code class="docutils literal"><span class="pre">$autoload['libr
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-2-1-3">
-<h3>Bug fixes for 2.1.3<a class="headerlink" href="#bug-fixes-for-2-1-3" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 2.1.3<a class="headerlink" href="#bug-fixes-for-2-1-3" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#1543) - File-based <a class="reference internal" href="libraries/caching.html"><span class="doc">Caching</span></a> method <code class="docutils literal"><span class="pre">get_metadata()</span></code> used a non-existent array key to look for the TTL value.</li>
 <li>Fixed a bug (#1314) - <a class="reference internal" href="libraries/sessions.html"><span class="doc">Session Library</span></a> method <code class="docutils literal"><span class="pre">sess_destroy()</span></code> didn’t destroy the userdata array.</li>
@@ -2010,7 +2010,7 @@ Only entries in <code class="docutils literal"><span class="pre">$autoload['libr
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-2-1-1">
-<h3>Bug fixes for 2.1.1<a class="headerlink" href="#bug-fixes-for-2-1-1" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 2.1.1<a class="headerlink" href="#bug-fixes-for-2-1-1" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#697) - A wrong array key was used in the <a class="reference internal" href="libraries/file_uploading.html"><span class="doc">File Uploading Library</span></a> to check for mime-types.</li>
 <li>Fixed a bug - <code class="docutils literal"><span class="pre">form_open()</span></code> compared $action against <code class="docutils literal"><span class="pre">site_url()</span></code> instead of <code class="docutils literal"><span class="pre">base_url()</span></code>.</li>
@@ -2085,7 +2085,7 @@ override them.</li>
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-2-1-0">
-<h3>Bug fixes for 2.1.0<a class="headerlink" href="#bug-fixes-for-2-1-0" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 2.1.0<a class="headerlink" href="#bug-fixes-for-2-1-0" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed #378 Robots identified as regular browsers by the User Agent
 class.</li>
@@ -2190,7 +2190,7 @@ than escape_str().</li>
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-2-0-3">
-<h3>Bug fixes for 2.0.3<a class="headerlink" href="#bug-fixes-for-2-0-3" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 2.0.3<a class="headerlink" href="#bug-fixes-for-2-0-3" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Added ENVIRONMENT to reserved constants. (Reactor #196)</li>
 <li>Changed server check to ensure SCRIPT_NAME is defined. (Reactor #57)</li>
@@ -2258,7 +2258,7 @@ instead of a string.</li>
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-2-0-2">
-<h3>Bug fixes for 2.0.2<a class="headerlink" href="#bug-fixes-for-2-0-2" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 2.0.2<a class="headerlink" href="#bug-fixes-for-2-0-2" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (Reactor #145) where the Output Library had
 parse_exec_vars set to protected.</li>
@@ -2316,7 +2316,7 @@ submit to the current URL.</li>
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-2-0-1">
-<h3>Bug fixes for 2.0.1<a class="headerlink" href="#bug-fixes-for-2-0-1" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 2.0.1<a class="headerlink" href="#bug-fixes-for-2-0-1" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>CLI requests can now be run from any folder, not just when CD’ed next
 to index.php.</li>
@@ -2561,7 +2561,7 @@ functions.</span></a></li>
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-2-0-0">
-<h3>Bug fixes for 2.0.0<a class="headerlink" href="#bug-fixes-for-2-0-0" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 2.0.0<a class="headerlink" href="#bug-fixes-for-2-0-0" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug where you could not change the User-Agent when sending
 email.</li>
@@ -2690,7 +2690,7 @@ this contribution).</li>
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-1-7-2">
-<h3>Bug fixes for 1.7.2<a class="headerlink" href="#bug-fixes-for-1-7-2" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 1.7.2<a class="headerlink" href="#bug-fixes-for-1-7-2" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed assorted user guide typos or examples (#6743, #7214, #7516,
 #7287, #7852, #8224, #8324, #8349).</li>
@@ -2790,7 +2790,7 @@ determine the visitor’s IP address.</li>
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-1-7-1">
-<h3>Bug fixes for 1.7.1<a class="headerlink" href="#bug-fixes-for-1-7-1" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 1.7.1<a class="headerlink" href="#bug-fixes-for-1-7-1" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Database<ul>
 <li>Fixed a bug when doing ‘random’ on order_by() (#5706).</li>
@@ -2971,7 +2971,7 @@ container div.</li>
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-1-7-0">
-<h3>Bug fixes for 1.7.0<a class="headerlink" href="#bug-fixes-for-1-7-0" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 1.7.0<a class="headerlink" href="#bug-fixes-for-1-7-0" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed bug in xss_clean() that could remove some desirable tag
 attributes.</li>
@@ -3091,7 +3091,7 @@ helper</span></a>.</li>
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-1-6-3">
-<h3>Bug fixes for 1.6.3<a class="headerlink" href="#bug-fixes-for-1-6-3" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for 1.6.3<a class="headerlink" href="#bug-fixes-for-1-6-3" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Added a language key for valid_emails in validation_lang.php.</li>
 <li>Amended fixes for bug (#3419) with parsing DSN database connections.</li>
@@ -3208,7 +3208,7 @@ to the userguide for globally available functions.</li>
 </li>
 </ul>
 <div class="section" id="bugfixes-for-1-6-2">
-<h3>Bugfixes for 1.6.2<a class="headerlink" href="#bugfixes-for-1-6-2" title="Permalink to this headline">¶</a></h3>
+<h4>Bugfixes for 1.6.2<a class="headerlink" href="#bugfixes-for-1-6-2" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug where SET queries were not being handled as “write”
 queries.</li>
@@ -3307,7 +3307,7 @@ the $source_dir is not readable.</li>
 </li>
 </ul>
 <div class="section" id="bugfixes-for-1-6-1">
-<h3>Bugfixes for 1.6.1<a class="headerlink" href="#bugfixes-for-1-6-1" title="Permalink to this headline">¶</a></h3>
+<h4>Bugfixes for 1.6.1<a class="headerlink" href="#bugfixes-for-1-6-1" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Deprecated is_numeric as a validation rule. Use of numeric and
 integer are preferred.</li>
@@ -3484,7 +3484,7 @@ configuration</span></a> page.</li>
 </li>
 </ul>
 <div class="section" id="bug-fixes-for-version-1-6-0">
-<h3>Bug fixes for Version 1.6.0<a class="headerlink" href="#bug-fixes-for-version-1-6-0" title="Permalink to this headline">¶</a></h3>
+<h4>Bug fixes for Version 1.6.0<a class="headerlink" href="#bug-fixes-for-version-1-6-0" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Fixed a bug (#1813) preventing using $CI-&gt;db in the same application
 with returned database objects.</li>

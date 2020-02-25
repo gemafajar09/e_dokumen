@@ -428,7 +428,7 @@
 <h2>Table MetaData<a class="headerlink" href="#table-metadata" title="Permalink to this headline">¶</a></h2>
 <p>These functions let you fetch table information.</p>
 <div class="section" id="list-the-tables-in-your-database">
-<h3>List the Tables in Your Database<a class="headerlink" href="#list-the-tables-in-your-database" title="Permalink to this headline">¶</a></h3>
+<h4>List the Tables in Your Database<a class="headerlink" href="#list-the-tables-in-your-database" title="Permalink to this headline">¶</a></h4>
 <p><strong>$this-&gt;db-&gt;list_tables();</strong></p>
 <p>Returns an array containing the names of all the tables in the database
 you are currently connected to. Example:</p>
@@ -442,7 +442,7 @@ you are currently connected to. Example:</p>
 </div>
 </div>
 <div class="section" id="determine-if-a-table-exists">
-<h3>Determine If a Table Exists<a class="headerlink" href="#determine-if-a-table-exists" title="Permalink to this headline">¶</a></h3>
+<h4>Determine If a Table Exists<a class="headerlink" href="#determine-if-a-table-exists" title="Permalink to this headline">¶</a></h4>
 <p><strong>$this-&gt;db-&gt;table_exists();</strong></p>
 <p>Sometimes it’s helpful to know whether a particular table exists before
 running an operation on it. Returns a boolean TRUE/FALSE. Usage example:</p>
@@ -461,7 +461,7 @@ running an operation on it. Returns a boolean TRUE/FALSE. Usage example:</p>
 <div class="section" id="field-metadata">
 <h2>Field MetaData<a class="headerlink" href="#field-metadata" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="list-the-fields-in-a-table">
-<h3>List the Fields in a Table<a class="headerlink" href="#list-the-fields-in-a-table" title="Permalink to this headline">¶</a></h3>
+<h4>List the Fields in a Table<a class="headerlink" href="#list-the-fields-in-a-table" title="Permalink to this headline">¶</a></h4>
 <p><strong>$this-&gt;db-&gt;list_fields()</strong></p>
 <p>Returns an array containing the field names. This query can be called
 two ways:</p>
@@ -487,7 +487,7 @@ calling the function from your query result object:</p>
 </div>
 </div>
 <div class="section" id="determine-if-a-field-is-present-in-a-table">
-<h3>Determine If a Field is Present in a Table<a class="headerlink" href="#determine-if-a-field-is-present-in-a-table" title="Permalink to this headline">¶</a></h3>
+<h4>Determine If a Field is Present in a Table<a class="headerlink" href="#determine-if-a-field-is-present-in-a-table" title="Permalink to this headline">¶</a></h4>
 <p><strong>$this-&gt;db-&gt;field_exists()</strong></p>
 <p>Sometimes it’s helpful to know whether a particular field exists before
 performing an action. Returns a boolean TRUE/FALSE. Usage example:</p>
@@ -505,7 +505,7 @@ looking for.</p>
 </div>
 </div>
 <div class="section" id="retrieve-field-metadata">
-<h3>Retrieve Field Metadata<a class="headerlink" href="#retrieve-field-metadata" title="Permalink to this headline">¶</a></h3>
+<h4>Retrieve Field Metadata<a class="headerlink" href="#retrieve-field-metadata" title="Permalink to this headline">¶</a></h4>
 <p><strong>$this-&gt;db-&gt;field_data()</strong></p>
 <p>Returns an array of objects containing field information.</p>
 <p>Sometimes it’s helpful to gather the field names or other metadata, like

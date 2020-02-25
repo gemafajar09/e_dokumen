@@ -58,11 +58,15 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="index.php?module=logharianpenilai/view">Daftar Cagar Alam</a>
+            <a class="nav-link" href="">Daftar Cagar Alam</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="index.php?module=logharianpenilai/view">Laporan</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Laporan</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="<?= base_url('laporanUpload') ?>">Upload</a>
+              <a class="dropdown-item" href="<?= base_url('pfoto') ?>">Download</a>
+            </div>
           </li>
 
         <li class="nav-item">

@@ -476,7 +476,7 @@ message.</p>
 <div class="section" id="using-the-xml-rpc-class">
 <h2><a class="toc-backref" href="#id4">Using the XML-RPC Class</a><a class="headerlink" href="#using-the-xml-rpc-class" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="initializing-the-class">
-<h3><a class="toc-backref" href="#id5">Initializing the Class</a><a class="headerlink" href="#initializing-the-class" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id5">Initializing the Class</a><a class="headerlink" href="#initializing-the-class" title="Permalink to this headline">¶</a></h4>
 <p>Like most other classes in CodeIgniter, the XML-RPC and XML-RPCS classes
 are initialized in your controller using the $this-&gt;load-&gt;library
 function:</p>
@@ -500,7 +500,7 @@ XML-RPC class and the XML-RPC Server class.</p>
 </div>
 </div>
 <div class="section" id="sending-xml-rpc-requests">
-<h3><a class="toc-backref" href="#id6">Sending XML-RPC Requests</a><a class="headerlink" href="#sending-xml-rpc-requests" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id6">Sending XML-RPC Requests</a><a class="headerlink" href="#sending-xml-rpc-requests" title="Permalink to this headline">¶</a></h4>
 <p>To send a request to an XML-RPC server you must specify the following
 information:</p>
 <ul class="simple">
@@ -535,7 +535,7 @@ error message sent back from the XML-RPC Server.</p>
 </div>
 </div>
 <div class="section" id="anatomy-of-a-request">
-<h3><a class="toc-backref" href="#id8">Anatomy of a Request</a><a class="headerlink" href="#anatomy-of-a-request" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id8">Anatomy of a Request</a><a class="headerlink" href="#anatomy-of-a-request" title="Permalink to this headline">¶</a></h4>
 <p>An XML-RPC request is simply the data you are sending to the XML-RPC
 server. Each piece of data in a request is referred to as a request
 parameter. The above example has two parameters: The URL and title of
@@ -566,7 +566,7 @@ with the data type in the second position:</p>
 types.</p>
 </div>
 <div class="section" id="creating-an-xml-rpc-server">
-<h3><a class="toc-backref" href="#id9">Creating an XML-RPC Server</a><a class="headerlink" href="#creating-an-xml-rpc-server" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id9">Creating an XML-RPC Server</a><a class="headerlink" href="#creating-an-xml-rpc-server" title="Permalink to this headline">¶</a></h4>
 <p>An XML-RPC Server acts as a traffic cop of sorts, waiting for incoming
 requests and redirecting them to the appropriate functions for
 processing.</p>
@@ -608,7 +608,7 @@ enable debugging, and xss_clean may be set to FALSE to prevent sending
 data through the Security library’s <code class="docutils literal"><span class="pre">xss_clean()</span></code> method.</p>
 </div>
 <div class="section" id="processing-server-requests">
-<h3><a class="toc-backref" href="#id10">Processing Server Requests</a><a class="headerlink" href="#processing-server-requests" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id10">Processing Server Requests</a><a class="headerlink" href="#processing-server-requests" title="Permalink to this headline">¶</a></h4>
 <p>When the XML-RPC Server receives a request and loads the class/method
 for processing, it will pass an object to that method containing the
 data sent by the client.</p>
@@ -677,7 +677,7 @@ array containing the user’s info.</p>
 </div>
 </div>
 <div class="section" id="formatting-a-response">
-<h3><a class="toc-backref" href="#id12">Formatting a Response</a><a class="headerlink" href="#formatting-a-response" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id12">Formatting a Response</a><a class="headerlink" href="#formatting-a-response" title="Permalink to this headline">¶</a></h4>
 <p>Similar to <em>Requests</em>, <em>Responses</em> must be formatted as an array.
 However, unlike requests, a response is an array <strong>that contains a
 single item</strong>. This item can be an array with several additional arrays,
@@ -707,7 +707,7 @@ common data type for responses.</p>
 in the <a class="reference external" href="#datatypes">Data Types</a> section.</p>
 </div>
 <div class="section" id="sending-an-error-response">
-<h3><a class="toc-backref" href="#id13">Sending an Error Response</a><a class="headerlink" href="#sending-an-error-response" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id13">Sending an Error Response</a><a class="headerlink" href="#sending-an-error-response" title="Permalink to this headline">¶</a></h4>
 <p>If you need to send the client an error response you will use the
 following:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">send_error_message</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">,</span> <span class="s1">&#39;Requested data not available&#39;</span><span class="p">);</span>
@@ -717,7 +717,7 @@ following:</p>
 the error message.</p>
 </div>
 <div class="section" id="creating-your-own-client-and-server">
-<h3><a class="toc-backref" href="#id14">Creating Your Own Client and Server</a><a class="headerlink" href="#creating-your-own-client-and-server" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id14">Creating Your Own Client and Server</a><a class="headerlink" href="#creating-your-own-client-and-server" title="Permalink to this headline">¶</a></h4>
 <p>To help you understand everything we’ve covered thus far, let’s create a
 couple controllers that act as XML-RPC Client and Server. You’ll use the
 Client to send a request to the Server and receive a response.</p>
@@ -818,7 +818,7 @@ response is sent back.</p>
 </div>
 </div>
 <div class="section" id="using-associative-arrays-in-a-request-parameter">
-<h3><a class="toc-backref" href="#id18">Using Associative Arrays In a Request Parameter</a><a class="headerlink" href="#using-associative-arrays-in-a-request-parameter" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id18">Using Associative Arrays In a Request Parameter</a><a class="headerlink" href="#using-associative-arrays-in-a-request-parameter" title="Permalink to this headline">¶</a></h4>
 <p>If you wish to use an associative array in your method parameters you
 will need to use a struct datatype:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$request</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -850,7 +850,7 @@ the Server.</p>
 </div>
 </div>
 <div class="section" id="id2">
-<h3><a class="toc-backref" href="#id19">Data Types</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id19">Data Types</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>According to the <a class="reference external" href="http://www.xmlrpc.com/spec">XML-RPC spec</a> there are
 seven types of values that you can send via XML-RPC:</p>
 <ul class="simple">

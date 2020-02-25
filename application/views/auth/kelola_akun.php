@@ -22,7 +22,7 @@ if ($this->session->flashdata('pesan') == TRUE) {
 					<div class="col-md-10 thumbnail">
 						<div class="card">
 							<div class="card-body">
-								<h3>Kelola Data Akun</h3>
+								<h4>Kelola Data Akun</h4>
 								<a href="<?php echo base_url('tambah_akun') ?>" data-toggle="modal" data-target="#tambah_akun" class="btn btn-primary">Tambah Data</a>
 								<br><hr>
 								<table id="example1" class="table table-hover">
@@ -45,9 +45,9 @@ if ($this->session->flashdata('pesan') == TRUE) {
 												<td><?php echo $row->jabatan; ?></td>
 												<td><?php echo $row->email; ?></td>
 												<td>
-													<button type="button" style="width: 70px" onclick="ambilDataAkun('<?php echo $row->id ?>')" class="btn btn-success">Edit</button>
+													<button type="button" style="width: 70px" onclick="ambilDataAkun('<?php echo $row->id ?>')" class="btn btn-success  btn-sm">Edit</button>
 
-													<a href="<?php echo base_url('hapus_akun/' . $row->id) ?>" class="btn btn-danger">Hapus</a>
+													<a href="<?php echo base_url('hapus_akun/' . $row->id) ?>" class="btn btn-danger  btn-sm">Hapus</a>
 												</td>
 											</tr>
 										<?php endforeach ?>
@@ -69,7 +69,7 @@ if ($this->session->flashdata('pesan') == TRUE) {
 		<div class="modal-content">
 			<div class="modal-header">
 				
-					<h3>Data Akun</h3>
+					<h4>Data Akun</h4>
 				
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>

@@ -480,7 +480,7 @@ obtained from the translations repositories, or that you translated yourself, as
 any additional ones needed by your application.</p>
 <p>You would store the language you are currently using, for instance in a session variable.</p>
 <div class="section" id="sample-language-files">
-<h3><a class="toc-backref" href="#id2">Sample Language Files</a><a class="headerlink" href="#sample-language-files" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id2">Sample Language Files</a><a class="headerlink" href="#sample-language-files" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">system</span><span class="o">/</span>
         <span class="nx">language</span><span class="o">/</span>
                 <span class="nx">english</span><span class="o">/</span>
@@ -503,7 +503,7 @@ any additional ones needed by your application.</p>
 </div>
 </div>
 <div class="section" id="example-of-switching-languages">
-<h3><a class="toc-backref" href="#id3">Example of switching languages</a><a class="headerlink" href="#example-of-switching-languages" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id3">Example of switching languages</a><a class="headerlink" href="#example-of-switching-languages" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$idiom</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">get_userdata</span><span class="p">(</span><span class="s1">&#39;language&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lang</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">&#39;error_messages&#39;</span><span class="p">,</span> <span class="nv">$idiom</span><span class="p">);</span>
 <span class="nv">$oops</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lang</span><span class="o">-&gt;</span><span class="na">line</span><span class="p">(</span><span class="s1">&#39;message_key&#39;</span><span class="p">);</span>
@@ -527,7 +527,7 @@ or “en-CA-x-ca” for English and some of its variants.</p>
 <div class="section" id="using-the-language-class">
 <h2><a class="toc-backref" href="#id5">Using the Language Class</a><a class="headerlink" href="#using-the-language-class" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="creating-language-files">
-<h3><a class="toc-backref" href="#id6">Creating Language Files</a><a class="headerlink" href="#creating-language-files" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id6">Creating Language Files</a><a class="headerlink" href="#creating-language-files" title="Permalink to this headline">¶</a></h4>
 <p>Language files must be named with <strong>_lang.php</strong> as the filename extension.
 For example, let’s say you want to create a file containing error messages.
 You might name it: error_lang.php</p>
@@ -550,7 +550,7 @@ them with error_</p>
 </div>
 </div>
 <div class="section" id="loading-a-language-file">
-<h3><a class="toc-backref" href="#id7">Loading A Language File</a><a class="headerlink" href="#loading-a-language-file" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id7">Loading A Language File</a><a class="headerlink" href="#loading-a-language-file" title="Permalink to this headline">¶</a></h4>
 <p>In order to fetch a line from a particular file you must load the file
 first. Loading a language file is done with the following code:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lang</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">);</span>
@@ -570,7 +570,7 @@ in your <strong>application/config/config.php</strong> file will be used.</p>
 </div>
 </div>
 <div class="section" id="fetching-a-line-of-text">
-<h3><a class="toc-backref" href="#id8">Fetching a Line of Text</a><a class="headerlink" href="#fetching-a-line-of-text" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id8">Fetching a Line of Text</a><a class="headerlink" href="#fetching-a-line-of-text" title="Permalink to this headline">¶</a></h4>
 <p>Once your desired language file is loaded you can access any line of
 text using this function:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lang</span><span class="o">-&gt;</span><span class="na">line</span><span class="p">(</span><span class="s1">&#39;language_key&#39;</span><span class="p">);</span>
@@ -594,7 +594,7 @@ the <a class="reference internal" href="../helpers/language_helper.html#lang" ti
 </div>
 </div>
 <div class="section" id="auto-loading-languages">
-<h3><a class="toc-backref" href="#id10">Auto-loading Languages</a><a class="headerlink" href="#auto-loading-languages" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id10">Auto-loading Languages</a><a class="headerlink" href="#auto-loading-languages" title="Permalink to this headline">¶</a></h4>
 <p>If you find that you need a particular language globally throughout your
 application, you can tell CodeIgniter to <a class="reference internal" href="../general/autoloader.html"><span class="doc">auto-load</span></a> it during system initialization. This is done
 by opening the <strong>application/config/autoload.php</strong> file and adding the
