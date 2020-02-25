@@ -21,35 +21,43 @@ Class Inputdata extends CI_Controller
         $nama_berkas = $this->input->post('nama_berkas');
         $kabkota = $this->input->post('kabkota');
         $tanggal = $this->input->post('tanggal');
-        $data = array(
-            'nama' => $nama_berkas,
-            'kabupaten' => $kabkota,
-            'tanggal' => $tanggal
-        );
-        $this->M_inputData->dokumenInput($data);
-        
-                         $number_of_files = sizeof($_FILES['dokumen']['tmp_name']);  
-                         $files = $_FILES['dokumen'];  
-                                 $config=array(  
-                                 'upload_path' => './upload/dokumen',
-                                 'allowed_types' => 'jpg|jpeg|png|gif|rar|doc|pdf',  
-                                 'max_size' => '30720',  
-                                //  'max_width' => '2000',  
-                                //  'max_height' => '2000'  
-                                 );  
-                         for ($i = 0;$i < $number_of_files; $i++)  
-                         {  
-                                 $_FILES['dokumen']['name'] = $files['name'][$i];  
-                                 $_FILES['dokumen']['type'] = $files['type'][$i];  
-                                 $_FILES['dokumen']['tmp_name'] = $files['tmp_name'][$i];  
-                                 $_FILES['dokumen']['error'] = $files['error'][$i];  
-                                 $_FILES['dokumen']['size'] = $files['size'][$i];  
-                                 $this->load->library('upload', $config);  
-                                 $this->M_inputData->uploadData($nama_berkas,$files['name'][$i]);
-                                 $this->upload->do_upload('dokumen');  
-                         } 
-        $this->session->set_flashdata('pesan','Data Berhasil Di Inputkan');
-        redirect('dokumen');
+        $data = $this->db->query("SELECT * FROM dokumen WHERE nama='$nama_berkas'")->result();
+        $jumlah = count($data);
+        if($jumlah == 0)
+        {
+            $data = array(
+                'nama' => $nama_berkas,
+                'kabupaten' => $kabkota,
+                'tanggal' => $tanggal
+            );
+            $this->M_inputData->dokumenInput($data);
+            
+                             $number_of_files = sizeof($_FILES['dokumen']['tmp_name']);  
+                             $files = $_FILES['dokumen'];  
+                                     $config=array(  
+                                     'upload_path' => './upload/dokumen',
+                                     'allowed_types' => 'jpg|jpeg|png|gif|rar|doc|pdf',  
+                                     'max_size' => '30720',  
+                                    //  'max_width' => '2000',  
+                                    //  'max_height' => '2000'  
+                                     );  
+                             for ($i = 0;$i < $number_of_files; $i++)  
+                             {  
+                                     $_FILES['dokumen']['name'] = $files['name'][$i];  
+                                     $_FILES['dokumen']['type'] = $files['type'][$i];  
+                                     $_FILES['dokumen']['tmp_name'] = $files['tmp_name'][$i];  
+                                     $_FILES['dokumen']['error'] = $files['error'][$i];  
+                                     $_FILES['dokumen']['size'] = $files['size'][$i];  
+                                     $this->load->library('upload', $config);  
+                                     $this->M_inputData->uploadData($nama_berkas,$files['name'][$i],$tanggal);
+                                     $this->upload->do_upload('dokumen');  
+                             } 
+            $this->session->set_flashdata('pesan','Data Berhasil Di Inputkan');
+            redirect('dokumen');
+        }else{
+            $this->session->set_flashdata('error','Data Telah Ada..!!!');
+            redirect('dokumen');
+        }
     }
 
     public function foto()
@@ -87,7 +95,7 @@ Class Inputdata extends CI_Controller
                                  $_FILES['foto']['error'] = $files['error'][$i];  
                                  $_FILES['foto']['size'] = $files['size'][$i];  
                                  $this->load->library('upload', $config);  
-                                 $this->M_inputData->uploadFoto($nama_berkas,$files['name'][$i]);
+                                 $this->M_inputData->uploadFoto($nama_berkas,$files['name'][$i],$tanggal);
                                  $this->upload->do_upload('foto');  
                          }  
         $this->session->set_flashdata('pesan','Data Berhasil Di Inputkan');

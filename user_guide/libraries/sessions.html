@@ -477,7 +477,7 @@ Session class.</p>
 <div class="custom-index container"></div><div class="section" id="using-the-session-class">
 <h2><a class="toc-backref" href="#id3">Using the Session Class</a><a class="headerlink" href="#using-the-session-class" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="initializing-a-session">
-<h3><a class="toc-backref" href="#id4">Initializing a Session</a><a class="headerlink" href="#initializing-a-session" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id4">Initializing a Session</a><a class="headerlink" href="#initializing-a-session" title="Permalink to this headline">¶</a></h4>
 <p>Sessions will typically run globally with each page load, so the Session
 class should either be initialized in your <a class="reference internal" href="../general/controllers.html"><span class="doc">controller</span></a> constructors, or it can be <a class="reference internal" href="../general/autoloader.html"><span class="doc">auto-loaded</span></a> by the system.
 For the most part the session class will run unattended in the background,
@@ -501,7 +501,7 @@ inside a controller constructor.</p>
 </div>
 </div>
 <div class="section" id="how-do-sessions-work">
-<h3><a class="toc-backref" href="#id5">How do Sessions work?</a><a class="headerlink" href="#how-do-sessions-work" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id5">How do Sessions work?</a><a class="headerlink" href="#how-do-sessions-work" title="Permalink to this headline">¶</a></h4>
 <p>When a page is loaded, the session class will check to see if valid
 session cookie is sent by the user’s browser. If a sessions cookie does
 <strong>not</strong> exist (or if it doesn’t match one stored on the server or has
@@ -546,7 +546,7 @@ anything to do with session variables.</p>
 </div>
 </div>
 <div class="section" id="what-is-session-data">
-<h3><a class="toc-backref" href="#id7">What is Session Data?</a><a class="headerlink" href="#what-is-session-data" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id7">What is Session Data?</a><a class="headerlink" href="#what-is-session-data" title="Permalink to this headline">¶</a></h4>
 <p>Session data is simply an array associated with a particular session ID
 (cookie).</p>
 <p>If you’ve used sessions in PHP before, you should be familiar with PHP’s
@@ -567,7 +567,7 @@ the custom ‘userdata’ methods work.</p>
 </div>
 </div>
 <div class="section" id="retrieving-session-data">
-<h3><a class="toc-backref" href="#id8">Retrieving Session Data</a><a class="headerlink" href="#retrieving-session-data" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id8">Retrieving Session Data</a><a class="headerlink" href="#retrieving-session-data" title="Permalink to this headline">¶</a></h4>
 <p>Any piece of information from the session array is available through the
 <code class="docutils literal"><span class="pre">$_SESSION</span></code> superglobal:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span>
@@ -611,7 +611,7 @@ omit the item key (magic getter only works for properties):</p>
 </div>
 </div>
 <div class="section" id="adding-session-data">
-<h3><a class="toc-backref" href="#id9">Adding Session Data</a><a class="headerlink" href="#adding-session-data" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id9">Adding Session Data</a><a class="headerlink" href="#adding-session-data" title="Permalink to this headline">¶</a></h4>
 <p>Let’s say a particular user logs into your site. Once authenticated, you
 could add their username and e-mail address to the session, making that
 data globally available to you without having to run a database query when
@@ -653,7 +653,7 @@ supports this syntax:</p>
 </div>
 </div>
 <div class="section" id="removing-session-data">
-<h3><a class="toc-backref" href="#id10">Removing Session Data</a><a class="headerlink" href="#removing-session-data" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id10">Removing Session Data</a><a class="headerlink" href="#removing-session-data" title="Permalink to this headline">¶</a></h4>
 <p>Just as with any other variable, unsetting a value in <code class="docutils literal"><span class="pre">$_SESSION</span></code> can be
 done through <code class="docutils literal"><span class="pre">unset()</span></code>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;some_name&#39;</span><span class="p">]);</span>
@@ -687,7 +687,7 @@ pairs. This is no longer supported.</p>
 </div>
 </div>
 <div class="section" id="flashdata">
-<h3><a class="toc-backref" href="#id11">Flashdata</a><a class="headerlink" href="#flashdata" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id11">Flashdata</a><a class="headerlink" href="#flashdata" title="Permalink to this headline">¶</a></h4>
 <p>CodeIgniter supports “flashdata”, or session data that will only be
 available for the next request, and is then automatically cleared.</p>
 <p>This can be very useful, especially for one-time informational, error or
@@ -747,7 +747,7 @@ You can either pass a single item or an array of flashdata items to keep.</p>
 </div>
 </div>
 <div class="section" id="tempdata">
-<h3><a class="toc-backref" href="#id12">Tempdata</a><a class="headerlink" href="#tempdata" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id12">Tempdata</a><a class="headerlink" href="#tempdata" title="Permalink to this headline">¶</a></h4>
 <p>CodeIgniter also supports “tempdata”, or session data with a specific
 expiration time. After the value expires, or the session expires or is
 deleted, the value is automatically removed.</p>
@@ -830,7 +830,7 @@ intend to reuse that same key in the same request, you’d want to use
 </div>
 </div>
 <div class="section" id="destroying-a-session">
-<h3><a class="toc-backref" href="#id13">Destroying a Session</a><a class="headerlink" href="#destroying-a-session" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id13">Destroying a Session</a><a class="headerlink" href="#destroying-a-session" title="Permalink to this headline">¶</a></h4>
 <p>To clear the current session (for example, during a logout), you may
 simply use either PHP’s <a class="reference external" href="http://php.net/session_destroy">session_destroy()</a>
 function, or the <code class="docutils literal"><span class="pre">sess_destroy()</span></code> method. Both will work in exactly the
@@ -851,7 +851,7 @@ unusable during the same request after you destroy the session.</p>
 </div>
 </div>
 <div class="section" id="accessing-session-metadata">
-<h3><a class="toc-backref" href="#id14">Accessing session metadata</a><a class="headerlink" href="#accessing-session-metadata" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id14">Accessing session metadata</a><a class="headerlink" href="#accessing-session-metadata" title="Permalink to this headline">¶</a></h4>
 <p>In previous CodeIgniter versions, the session data array included 4 items
 by default: ‘session_id’, ‘ip_address’, ‘user_agent’, ‘last_activity’.</p>
 <p>This was due to the specifics of how sessions worked, but is now no longer
@@ -868,7 +868,7 @@ accessing them:</p>
 </div></blockquote>
 </div>
 <div class="section" id="session-preferences">
-<h3><a class="toc-backref" href="#id15">Session Preferences</a><a class="headerlink" href="#session-preferences" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id15">Session Preferences</a><a class="headerlink" href="#session-preferences" title="Permalink to this headline">¶</a></h4>
 <p>CodeIgniter will usually make everything work out of the box. However,
 Sessions are a very sensitive component of any application, so some
 careful configuration must be done. Please take your time to consider
@@ -980,7 +980,7 @@ ignored.</p>
 </div>
 </div>
 <div class="section" id="session-drivers">
-<h3><a class="toc-backref" href="#id16">Session Drivers</a><a class="headerlink" href="#session-drivers" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id16">Session Drivers</a><a class="headerlink" href="#session-drivers" title="Permalink to this headline">¶</a></h4>
 <p>As already mentioned, the Session library comes with 4 drivers, or storage
 engines, that you can use:</p>
 <blockquote>

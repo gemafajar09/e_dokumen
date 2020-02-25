@@ -11,6 +11,18 @@ $pesan = $this->session->flashdata('pesan');
               'success'
             )      
        </script>
+<?php }elseif($this->session->flashdata('error')== TRUE){
+$error = $this->session->flashdata('error'); 
+?>
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+           <script type="text/javascript">
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: '<?= $error ?>'
+                })   
+           </script>
 <?php } ?>
         <div class="row">
           <div class="col-md-3">

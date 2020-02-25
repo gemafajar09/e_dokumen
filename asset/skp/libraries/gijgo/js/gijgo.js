@@ -12078,7 +12078,7 @@ gj.tree.plugins.dragAndDrop = {
               * @type Boolean
               * @default undefined
               * @example Material.Design <!-- draggable, droppable, tree -->
-              * <h3>Drag and Drop Tree Nodes</h3>
+              * <h4>Drag and Drop Tree Nodes</h4>
               * <div id="tree"></div>
               * <script>
               *     $('#tree').tree({
@@ -12088,7 +12088,7 @@ gj.tree.plugins.dragAndDrop = {
               * </script>
               * @example Bootstrap.3 <!-- bootstrap, draggable, droppable, tree -->
               * <div class="container">
-              *     <h3>Drag and Drop Tree Nodes</h3>
+              *     <h4>Drag and Drop Tree Nodes</h4>
               *     <div id="tree"></div>
               * </div>
               * <script>
@@ -12100,7 +12100,7 @@ gj.tree.plugins.dragAndDrop = {
               * </script>
               * @example Bootstrap.4 <!-- bootstrap4, draggable, droppable, tree -->
               * <div class="container">
-              *     <h3>Drag and Drop Tree Nodes</h3>
+              *     <h4>Drag and Drop Tree Nodes</h4>
               *     <div id="tree"></div>
               * </div>
               * <script>

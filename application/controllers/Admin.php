@@ -9,6 +9,8 @@ Class Admin extends CI_Controller
 		$this->load->library('template');
         $this->load->library('session');
         $this->load->model('M_admin');
+        $this->load->library('pagination');
+        $this->load->model('M_informasi');
 	}
 // awal login
     public function index()
@@ -99,7 +101,33 @@ Class Admin extends CI_Controller
 
     public function halaman()
     {
-        $data['user'] =$this->db->GET_WHERE('pengguna',['nik' => $this->session->userdata('nik')])->row_array();
+        $config['base_url'] = 'http://localhost/E-document/Admin/halaman';
+        $config['total_rows'] = $this->db->count_all('berita');
+        $config['per_page'] = 2;
+
+        $config['first_link']       = 'First';
+        $config['last_link']        = 'Last';
+        $config['next_link']        = 'Next';
+        $config['prev_link']        = 'Prev';
+        $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+        $config['full_tag_close']   = '</ul></nav></div>';
+        $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+        $config['num_tag_close']    = '</span></li>';
+        $config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+        $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+        $config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+        $config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['prev_tagl_close']  = '</span>Next</li>';
+        $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+        $config['first_tagl_close'] = '</span></li>';
+        $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+        $config['last_tagl_close']  = '</span></li>';
+
+        $this->pagination->initialize($config);
+        $data['start'] = $this->uri->segment(3);
+        $data['user'] = $this->db->GET_WHERE('pengguna', ['nik' => $this->session->userdata('nik')])->row_array();
+        $data['informasi'] = $this->M_informasi->tampilInformasi2($config['per_page'], $data['start']);
         $this->template->utama('home', $data);
     }
 

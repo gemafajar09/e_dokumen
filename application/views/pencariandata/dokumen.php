@@ -27,21 +27,21 @@ $pesan = $this->session->flashdata('pesan');
 									<th>Nama Berkas</th>
 									<th>Kabupaten/Kota</th>
 									<th>Tahun</th>
-									<th style="width:190px;text-align: center">Opsi</th>
+									<th style="width:60px;text-align: center">Opsi</th>
 								</tr>
 							</thead>
 							<tbody>
               <?php foreach($dokumen as $i => $a): ?>
 								<tr>
 									<td>
-                    <button data-toggle="collapse" type="button" href="#collapseExample<?= $i ?>" role="button" class="btn btn-success" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-plus"></i></button>
+                    <button data-toggle="collapse" type="button" href="#collapseExample<?= $i ?>" role="button" class="btn btn-success  btn-sm" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-plus"></i></button>
                   </td>
 									<td><?= $a->nama ?></td>
 									<td><?= $a->kabupaten ?></td>
-									<td>test</td>
+									<td><?= tanggal($a->tanggal) ?></td>
 									<td>
-										<a href="<?php echo base_url() ?>edokumen" data-toggle="modal" style="width: 70px" data-target="#edit_dokumen" class="btn btn-success">Edit</a>
-										<a href="" class="btn btn-danger">Hapus</a>
+										<button type="button" onclick="editDokumen('<?= $a->id_dokumen ?>')" class="btn btn-success  btn-sm"><i class="fa fa-edit"></i></button>
+										<a href="<?= base_url('hapusDokumen/'.$a->id_dokumen) ?>" class="btn btn-danger  btn-sm"><i class="fa fa-trash"></i></a>
 									</td>
 								</tr>
 							</tbody>
@@ -54,7 +54,10 @@ $pesan = $this->session->flashdata('pesan');
                           foreach($data as $b): ?>
                             <tr>
                               <td><?= $b->file ?></td>
-                              <td style="width:80px; text-align:center"><a href="<?= base_url('upload/dokumen/'.$b->file) ?>" class="btn btn-success"><i class="fa fa-download"></i></a></td>
+                              <td style="width:80px; text-align:center">
+                                <a href="<?= base_url('upload/dokumen/'.$b->file) ?>" target="blank" class="btn btn-success  btn-sm"><i class="fa fa-eye"></i></a>
+                                <a href="<?= base_url('Pencariandata/downloadDokumen/'.$b->id) ?>" target="blank" class="btn btn-warning  btn-sm"><i class="fa fa-download"></i></a>
+                              </td>
                             </tr>
                           <?php endforeach ?>
                           </table>
@@ -77,24 +80,25 @@ $pesan = $this->session->flashdata('pesan');
         <div class="modal-content">
             <div class="modal-header">
                 
-                  	<h3>Edit Dokumen</h3>
+                  	<h4>Edit Dokumen</h4>
                 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-            <form name="form1" method="POST" enctype="multipart/form-data">
+            <form name="form1" method="POST" action="<?= base_url('updateFileDokumen') ?>" enctype="multipart/form-data">
               <div class="form-group row">
                 <label for="" class="col-sm-4 col-form-label">Nama Berkas</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" name="nama_berkas">
+                <input type="hidden" name="id" id="id_dokumen">
+                  <input type="text" id="nama_berkas" class="form-control" name="nama_berkas">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="" class="col-sm-4 col-form-label">Kabupaten/Kota</label>
                 <div class="col-sm-8">
-                  <select name="kabkota" class="form-control">
+                  <select name="kabkota" id="kabkota" class="form-control">
                     <option>Pilih Kab/Kota</option>
                     
                     <option value="Sumbar">Sumatera Barat</option>
@@ -106,28 +110,80 @@ $pesan = $this->session->flashdata('pesan');
               <div class="form-group row">
                 <label for="" class="col-sm-4 col-form-label">Tahun</label>
                 <div class="col-sm-8">
-                  <input type="date" class="form-control" name="tanggal">
+                  <input type="date" id="tanggal" class="form-control" name="tanggal">
                 </div>
               </div>
               <div class="form-group row">
-                <label for="" class="col-sm-4 col-form-label">Berkas</label>
-                <div class="col-sm-8">
-                  <input type="file" class="form-control" name="berkas">
-                  <i style="color : red; font-size: 15px;">*format Pdf dengan Ukuran Max 15 Mb</i>
-                </div>
-              </div>
+                    <label for="" class="col-sm-4 col-form-label">Berkas</label>
+                    <div class="col-sm-8">
+                    <span style="color:red; font-size:10px">*jika tidak ada upload file baru kosongkan saja.</span>
+                      <input type="file" class="form-control" multiple name="dokumen[]">
+                      <i style="color : red; font-size: 10px;">*format Pdf dengan Ukuran Max 15 Mb</i>
+                    </div>
+                  </div>
               <div class="form-group row">
                 <div class="col-sm-12" align="center">
                   <button type="submit" class="btn btn-primary" name="simpan" value="SIMPAN"><i> SIMPAN</i></button>
                   <button type="reset" class="btn btn-warning" name="reset" value="RESET"><i> RESET</i></button>
                 </div>
               </div>
-            </form>  
-            </div>
-            <div class="modal-footer">
-
+            </form> 
+              <div class="card">
+                  <div class="card-body">
+                    <table class="table">
+                            <thead>
+                              <tr>
+                                <th>No</th>
+                                <th>File</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody id="files"></tbody>
+                    </table>
+                  </div>
+              </div>
+               
             </div>
 
         </div>
     </div>
 </div>
+<script src="<?= base_url() ?>asset/skp/libraries/jquery/jquery-3.4.1.min.js"></script>
+<script>
+function ambilBerkas(nama_berkas)
+{
+      $.ajax({
+        url:"<?= base_url('tampilFile') ?>",
+        method: "POST",
+        data:{'nama_berkas':nama_berkas},
+        success:function(data){
+          console.log(data)
+          $('#files').html(data);
+          $('#edit_dokumen').modal();
+        }
+      });
+      
+}
+
+function editDokumen(id)
+{
+  $.ajax({
+    url : '<?= base_url('editDokumen') ?>',
+    type: 'POST',
+    data : {'id_dokumen': id},
+    dataType: 'json',
+    success: function(data)
+    {
+      document.getElementById('id_dokumen').value = data[0].id_dokumen;
+      document.getElementById('nama_berkas').value = data[0].nama;
+      document.getElementById('kabkota').value = data[0].kabupaten;
+      document.getElementById('tanggal').value = data[0].tanggal;
+      
+      ambilBerkas(data[0].nama);
+
+      
+    }
+  });
+}
+
+</script>

@@ -452,7 +452,7 @@ is no need to do it manually.</p>
 <div class="custom-index container"></div><div class="section" id="input-filtering">
 <h2><a class="toc-backref" href="#id1">Input Filtering</a><a class="headerlink" href="#input-filtering" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="security-filtering">
-<h3><a class="toc-backref" href="#id2">Security Filtering</a><a class="headerlink" href="#security-filtering" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id2">Security Filtering</a><a class="headerlink" href="#security-filtering" title="Permalink to this headline">¶</a></h4>
 <p>The security filtering method is called automatically when a new
 <a class="reference internal" href="../general/controllers.html"><span class="doc">controller</span></a> is invoked. It does the
 following:</p>
@@ -470,7 +470,7 @@ enabled globally, or upon request.</li>
 </ul>
 </div>
 <div class="section" id="xss-filtering">
-<h3><a class="toc-backref" href="#id3">XSS Filtering</a><a class="headerlink" href="#xss-filtering" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id3">XSS Filtering</a><a class="headerlink" href="#xss-filtering" title="Permalink to this headline">¶</a></h4>
 <p>The Input class has the ability to filter input automatically to prevent
 cross-site scripting attacks. If you want the filter to run
 automatically every time it encounters POST or COOKIE data you can
@@ -492,7 +492,7 @@ be performed on <em>output</em>, not <em>input</em>!</p>
 <div class="section" id="accessing-form-data">
 <h2><a class="toc-backref" href="#id4">Accessing form data</a><a class="headerlink" href="#accessing-form-data" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="using-post-get-cookie-or-server-data">
-<h3><a class="toc-backref" href="#id5">Using POST, GET, COOKIE, or SERVER Data</a><a class="headerlink" href="#using-post-get-cookie-or-server-data" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id5">Using POST, GET, COOKIE, or SERVER Data</a><a class="headerlink" href="#using-post-get-cookie-or-server-data" title="Permalink to this headline">¶</a></h4>
 <p>CodeIgniter comes with helper methods that let you fetch POST, GET,
 COOKIE or SERVER items. The main advantage of using the provided
 methods rather than fetching an item directly (<code class="docutils literal"><span class="pre">$_POST['something']</span></code>)
@@ -516,7 +516,7 @@ you might do something like this:</p>
 </ul>
 </div>
 <div class="section" id="using-the-php-input-stream">
-<h3><a class="toc-backref" href="#id6">Using the php://input stream</a><a class="headerlink" href="#using-the-php-input-stream" title="Permalink to this headline">¶</a></h3>
+<h4><a class="toc-backref" href="#id6">Using the php://input stream</a><a class="headerlink" href="#using-the-php-input-stream" title="Permalink to this headline">¶</a></h4>
 <p>If you want to utilize the PUT, DELETE, PATCH or other exotic request
 methods, they can only be accessed via a special input stream, that
 can only be read once. This isn’t as easy as just reading from e.g.

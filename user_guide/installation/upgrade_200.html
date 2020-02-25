@@ -431,7 +431,7 @@ replacing the index.php file with a static one.</p>
 <div class="section" id="update-instructions">
 <h2>Update Instructions<a class="headerlink" href="#update-instructions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="step-1-update-your-codeigniter-files">
-<h3>Step 1: Update your CodeIgniter files<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="Permalink to this headline">¶</a></h3>
+<h4>Step 1: Update your CodeIgniter files<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="Permalink to this headline">¶</a></h4>
 <p>Replace all files and directories in your “system” folder <strong>except</strong>
 your application folder.</p>
 <div class="admonition note">
@@ -441,7 +441,7 @@ make copies of them first.</p>
 </div>
 </div>
 <div class="section" id="step-2-adjust-get-dir-file-info-where-necessary">
-<h3>Step 2: Adjust get_dir_file_info() where necessary<a class="headerlink" href="#step-2-adjust-get-dir-file-info-where-necessary" title="Permalink to this headline">¶</a></h3>
+<h4>Step 2: Adjust get_dir_file_info() where necessary<a class="headerlink" href="#step-2-adjust-get-dir-file-info-where-necessary" title="Permalink to this headline">¶</a></h4>
 <p>Version 2.0.0 brings a non-backwards compatible change to
 get_dir_file_info() in the <a class="reference internal" href="../helpers/file_helper.html"><span class="doc">File
 Helper</span></a>. Non-backwards compatible changes
@@ -455,7 +455,7 @@ to FALSE:</p>
 </div>
 </div>
 <div class="section" id="step-3-convert-your-plugins-to-helpers">
-<h3>Step 3: Convert your Plugins to Helpers<a class="headerlink" href="#step-3-convert-your-plugins-to-helpers" title="Permalink to this headline">¶</a></h3>
+<h4>Step 3: Convert your Plugins to Helpers<a class="headerlink" href="#step-3-convert-your-plugins-to-helpers" title="Permalink to this headline">¶</a></h4>
 <p>2.0.0 gets rid of the “Plugin” system as their functionality was
 identical to Helpers, but non-extensible. You will need to rename your
 plugin files from filename_pi.php to filename_helper.php, move them to
@@ -469,7 +469,7 @@ your helpers folder, and change all instances of:</p>
 </div>
 </div>
 <div class="section" id="step-4-update-stored-encrypted-data">
-<h3>Step 4: Update stored encrypted data<a class="headerlink" href="#step-4-update-stored-encrypted-data" title="Permalink to this headline">¶</a></h3>
+<h4>Step 4: Update stored encrypted data<a class="headerlink" href="#step-4-update-stored-encrypted-data" title="Permalink to this headline">¶</a></h4>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If your application does not use the Encrypt library, does
@@ -490,29 +490,29 @@ method</span></a> in the Encrypt library
 documentation.</p>
 </div>
 <div class="section" id="step-5-remove-loading-calls-for-the-compatibility-helper">
-<h3>Step 5: Remove loading calls for the compatibility helper.<a class="headerlink" href="#step-5-remove-loading-calls-for-the-compatibility-helper" title="Permalink to this headline">¶</a></h3>
+<h4>Step 5: Remove loading calls for the compatibility helper.<a class="headerlink" href="#step-5-remove-loading-calls-for-the-compatibility-helper" title="Permalink to this headline">¶</a></h4>
 <p>The compatibility helper has been removed from the CodeIgniter core. All
 methods in it should be natively available in supported PHP versions.</p>
 </div>
 <div class="section" id="step-6-update-class-extension">
-<h3>Step 6: Update Class extension<a class="headerlink" href="#step-6-update-class-extension" title="Permalink to this headline">¶</a></h3>
+<h4>Step 6: Update Class extension<a class="headerlink" href="#step-6-update-class-extension" title="Permalink to this headline">¶</a></h4>
 <p>All core classes are now prefixed with CI_. Update Models and
 Controllers to extend CI_Model and CI_Controller, respectively.</p>
 </div>
 <div class="section" id="step-7-update-parent-constructor-calls">
-<h3>Step 7: Update Parent Constructor calls<a class="headerlink" href="#step-7-update-parent-constructor-calls" title="Permalink to this headline">¶</a></h3>
+<h4>Step 7: Update Parent Constructor calls<a class="headerlink" href="#step-7-update-parent-constructor-calls" title="Permalink to this headline">¶</a></h4>
 <p>All native CodeIgniter classes now use the PHP 5 __construct()
 convention. Please update extended libraries to call
 parent::__construct().</p>
 </div>
 <div class="section" id="step-8-move-any-core-extensions-to-application-core">
-<h3>Step 8: Move any core extensions to application/core<a class="headerlink" href="#step-8-move-any-core-extensions-to-application-core" title="Permalink to this headline">¶</a></h3>
+<h4>Step 8: Move any core extensions to application/core<a class="headerlink" href="#step-8-move-any-core-extensions-to-application-core" title="Permalink to this headline">¶</a></h4>
 <p>Any extensions to core classes (e.g. MY_Controller.php) in your
 application/libraries folder must be moved to the new
 application/core folder.</p>
 </div>
 <div class="section" id="step-9-update-your-user-guide">
-<h3>Step 9: Update your user guide<a class="headerlink" href="#step-9-update-your-user-guide" title="Permalink to this headline">¶</a></h3>
+<h4>Step 9: Update your user guide<a class="headerlink" href="#step-9-update-your-user-guide" title="Permalink to this headline">¶</a></h4>
 <p>Please replace your local copy of the user guide with the new version,
 including the image files.</p>
 </div>
@@ -544,7 +544,7 @@ from the db utility drivers.</li>
 has been renamed to <code class="docutils literal"><span class="pre">do_hash()</span></code> for naming consistency.</li>
 </ul>
 <div class="section" id="the-config-folder">
-<h3>The config folder<a class="headerlink" href="#the-config-folder" title="Permalink to this headline">¶</a></h3>
+<h4>The config folder<a class="headerlink" href="#the-config-folder" title="Permalink to this headline">¶</a></h4>
 <p>The following files have been changed:</p>
 <ul class="simple">
 <li>config.php</li>
