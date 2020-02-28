@@ -4,16 +4,16 @@
         <div class="card">
             <div class="card-body">
                 <h4>Laporan Upload Data</h4><hr>
-                <form action="">
+                <form action="<?= base_url('carigrafik') ?>" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-4">
-                            <input type="month" name="tangal_awal" class="form-control">
+                            <input type="date" name="tanggal_awal" class="form-control">
                         </div>
                         <div class="col-md-2">
                             <h4><center>-</center></h4>
                         </div>
                         <div class="col-md-4">
-                            <input type="month" name="tangal_awal" class="form-control">
+                            <input type="date" name="tanggal_akhir" class="form-control">
                         </div>
                         <div class="col-md-2">
                             <button type="submit" class="btn btn-primary">Proses</button>
@@ -44,8 +44,11 @@
     subtitle: {
         text: ''
     },
+    <?php foreach($grafik as $bulan){
+        $data_bulan[] = $bulan->bulan;
+    } ?>
     xAxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        categories: <?= json_encode($data_bulan) ?>
     },
     yAxis: {
         title: {
@@ -60,9 +63,18 @@
             enableMouseTracking: false
         }
     },
+
+    <?php 
+    $hasil = 0;
+    foreach($grafik as $jumlah){
+        $data_grafik[] = (int)$jumlah->jumlah;
+        $hasil += $jumlah->jumlah;
+    } 
+    
+    ?>
     series: [{
-        name: 'Jumlah Data Upload: 87',
-        data: [7.0, 6.9, 9.5, 0, 0, 0,0, 0, 0, 0, 0, 0]
+        name: 'Jumlah Data Upload: <?= $hasil ?>',
+        data: <?= json_encode($data_grafik) ?>
     }]
 });
 </script>

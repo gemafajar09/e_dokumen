@@ -40,7 +40,6 @@ Class Informasi extends CI_Controller
                 'deskripsi' => $deskripsi,
                 'foto'    => $foto
             );
-            var_dump($foto); exit;
             $this->M_informasi->gambarInput($data);
             $this->session->set_flashdata('pesan', 'Data Berhasil Di Inputkan');
         } else {
@@ -81,27 +80,27 @@ Class Informasi extends CI_Controller
         redirect('informasi');
     }
 
-
-
-    public function _upgambar()
-    {
-
+    private function _upgambar(){
         $id = $this->input->post('id_berita');
         $row = $this->M_informasi->getBerita($id);
-        var_dump($row); exit;
         unlink("./upload/gambar/" . $row[0]->foto);
-
-
+        
         $config['upload_path']          = './upload/gambar';
-        $config['allowed_types']        = 'gif|jpg|jpeg|png';
-        $config['max_size']             = 2000;
-        $config['overwrite']            = TRUE;
-        //$config['file_name']            = $tes_nama;
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['file_name']            = uniqid();
+        $config['overwrite']			= true;
+        $config['max_size']             = 2048; // 1MB
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
 
+
+
         if ($this->upload->do_upload('foto')) {
-            return $this->upload->file_name;
+        return $this->upload->data("file_name");
         }
+
+        return "default.png";
     }
 }

@@ -98,13 +98,12 @@ $pesan = $this->session->flashdata('pesan');
               <div class="form-group row">
                 <label for="" class="col-sm-4 col-form-label">Kabupaten/Kota</label>
                 <div class="col-sm-8">
-                  <select name="kabkota" id="kabkota" class="form-control">
-                    <option>Pilih Kab/Kota</option>
-                    
-                    <option value="Sumbar">Sumatera Barat</option>
-                    <option value="Riau">Riau</option>
-                    <option value="Kepri">Kep. Riau</option>
-                  </select>
+                <select name="kabkota" class="form-control">
+                  <option>Pilih Kab/Kota</option>
+                  <?php foreach ($kabupaten as $a) : ?>
+                    <option value="<?= $a->id_prov ?>"><?= $a->nama_provinsi ?></option>
+                  <?php endforeach ?>
+                </select>
                 </div>
               </div>
               <div class="form-group row">

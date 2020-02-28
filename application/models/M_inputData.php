@@ -3,7 +3,7 @@ Class M_inputData Extends CI_Model
 {
     public function tampilDokumen()
     {
-        return $this->db->query("SELECT * FROM dokumen")->result();
+        return $this->db->query("SELECT * FROM dokumen LEFT JOIN tb_prov ON dokumen.kabupaten=tb_prov.id_prov")->result();
     }
     
     public function dokumenInput($a)
@@ -55,7 +55,7 @@ Class M_inputData Extends CI_Model
     // Foto
     public function tampilFoto()
     {
-        return $this->db->query("SELECT * FROM foto")->result();
+        return $this->db->query("SELECT * FROM foto LEFT JOIN tb_prov ON foto.kabupaten=tb_prov.id_prov")->result();
     }
     
     public function fotoInput($a)
@@ -124,5 +124,10 @@ Class M_inputData Extends CI_Model
     {
         $this->db->where('koordinat_id', $koordinat_id);
         $this->db->delete('tb_koordinat');
+    }
+
+    public function kabupaten()
+    {
+        return $this->db->query("SELECT * FROM tb_prov")->result();
     }
 }

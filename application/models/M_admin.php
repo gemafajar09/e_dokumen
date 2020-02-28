@@ -35,4 +35,22 @@ Class M_admin Extends CI_Model
 		$this->db->where('id', $id);
 		$this->db->delete('pengguna');
 	}
+
+	public function countUpload()
+	{
+		return $this->db->query("SELECT SUM(jumlah) as hasil FROM (select COUNT(id) AS jumlah from file_dokumen
+		union 
+		select COUNT(id) AS jumlah from file_foto) grafik
+		")->result();
+	}
+
+	public function countDownload()
+	{
+		return $this->db->query("SELECT SUM(jumlah_download) AS jumlah_download FROM download")->result();
+	}
+
+	public function countBerita()
+	{
+		return $this->db->query("SELECT COUNT(*) AS jumlah_berita FROM berita")->result();
+	}
 }

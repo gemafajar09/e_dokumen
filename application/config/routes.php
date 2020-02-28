@@ -46,3 +46,10 @@ $route['edit_informasi']['POST'] = 'Informasi/editInformasi';
 $route['hapus_informasi/(:num)']['GET'] = 'Informasi/hapusInformasi/$1';
 
 $route['laporanUpload']['get'] = 'Laporan/index';
+$route['carigrafik']['post'] = 'Laporan/carigrafik';
+// download
+$route['hitungDownload']['get'] = 'Laporan/hitungDownload';
+$route['carigrafikDownload']['post'] = 'Laporan/carigrafikDownload';
+
+$route['cagaralam']['get'] = 'Cagaralam/cagarAlam';
+$route['tampil']['post'] = 'Cagaralam/tampil/';

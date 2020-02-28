@@ -19,8 +19,8 @@ if ($this->session->flashdata('pesan') == TRUE) {
         <div class="card">
           <div class="card-body bg-warning">
             <div class="inner">
-              <h3>65</h3>
-              <p>Unique Visitors</p>
+              <h3><?= $jumlah_upload[0]->hasil ?></h3>
+              <p>Jumlah Upload</p>
             </div>
           </div>
         </div>
@@ -30,8 +30,8 @@ if ($this->session->flashdata('pesan') == TRUE) {
         <div class="card">
           <div class="card-body bg-success">
             <div class="inner">
-              <h3>65</h3>
-              <p>Unique Visitors</p>
+              <h3><?= $jumlah_download[0]->jumlah_download ?></h3>
+              <p>Jumlah Download</p>
             </div>
           </div>
         </div>
@@ -41,8 +41,8 @@ if ($this->session->flashdata('pesan') == TRUE) {
         <div class="card">
           <div class="card-body bg-danger">
             <div class="inner">
-              <h3>65</h3>
-              <p>Unique Visitors</p>
+              <h3><?= $jumlah_berita[0]->jumlah_berita ?></h3>
+              <p>Jumlah Berita</p>
             </div>
           </div>
         </div>
@@ -91,9 +91,7 @@ if ($this->session->flashdata('pesan') == TRUE) {
                 <i><?php
                     $kalimat = $row->deskripsi;
                     $cetak = substr($kalimat, 0, 200);
-                    //var_dump($cetak);
                     $p = strlen($kalimat);
-                    //                                echo $p;
                     if ($p <= 200) {
                       echo $cetak;
                     } elseif ($p > 200) {
@@ -121,14 +119,6 @@ if ($this->session->flashdata('pesan') == TRUE) {
 <div class="modal fade" id="berita" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-lg" role="document">
     <div class="modal-content ">
-      <!-- <div class="modal-header">
-        <center>
-          <h3>Informasi</h3>
-        </center>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div> -->
       <div class="modal-body">
         <form name="form1" method="POST" enctype="multipart/form-data">
           <div class="form-group row">
@@ -171,25 +161,20 @@ if ($this->session->flashdata('pesan') == TRUE) {
           </div>
           <div class="form-group row">
             <div class="col-sm-12">
-              <p name="deskripsi" id="deskripsi" cols="30" rows="10">
-              </p>
-              <!-- <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace('editor1');
-              </script> -->
+              <p name="deskripsi" id="deskripsi" cols="30" rows="10"></p>
             </div>
           </div>
         </form>
       </div>
-      <!-- <div class="modal-footer">
-
-      </div> -->
 
     </div>
   </div>
 </div>
-
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script type="text/javascript">
   function ambilDataBerita(id) {
     $.ajax({
@@ -204,10 +189,72 @@ if ($this->session->flashdata('pesan') == TRUE) {
         document.getElementById('nama_penerbit').innerHTML = data[0].nama_penerbit;
         document.getElementById('tanggal').innerHTML = data[0].tanggal;
         document.getElementById('deskripsi').innerHTML = data[0].deskripsi;
-        //CKEDITOR.instances.editor1.setData(data[0].deskripsi);
         document.getElementById('foto').src = '<?= base_url("upload/gambar") ?>/' + data[0].foto;
         $("#berita").modal('show');
       }
     })
   }
+
+  Highcharts.chart('grafik', {
+
+title: {
+    text: 'Grafik Upload Dan Download'
+},
+
+subtitle: {
+    text: ''
+},
+
+yAxis: {
+    title: {
+        text: 'Viewer Upload & Download'
+    }
+},
+
+<?php foreach($upload as $bulan){
+    $data_bulan[] = $bulan->bulan;
+    $data_upload[] = (int)$bulan->jumlah;
+} ?>
+xAxis: {
+    categories: ''
+},
+
+plotOptions: {
+    line: {
+        dataLabels: {
+            enabled: true
+        },
+        enableMouseTracking: false
+    }
+},
+<?php 
+foreach($download as $jumlah){
+    $data_grafik[] = (int)$jumlah->jumlah;
+} 
+
+?>
+series: [{
+    name: 'Download',
+    data: <?= json_encode($data_grafik) ?>
+}, {
+    name: 'Upload',
+    data: <?= json_encode($data_upload) ?>
+}],
+
+responsive: {
+    rules: [{
+        condition: {
+            maxWidth: 500
+        },
+        chartOptions: {
+            legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom'
+            }
+        }
+    }]
+}
+
+});
 </script>
