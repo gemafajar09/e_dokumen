@@ -12,9 +12,6 @@ if ($this->session->flashdata('pesan') == TRUE) {
 		)
 	</script>
 <?php } ?>
-<div class="box">
-	<div class="box-header">
-		<div class="box-body">
 			<form name="form1" method="POST" enctype="multipart/form-data">
 				<div class="row">
 					<div class="col-md-1">
@@ -23,7 +20,7 @@ if ($this->session->flashdata('pesan') == TRUE) {
 						<div class="card">
 							<div class="card-body">
 								<h4>Kelola Data Akun</h4>
-								<a href="<?php echo base_url('tambah_akun') ?>" data-toggle="modal" data-target="#tambah_akun" class="btn btn-primary">Tambah Data</a>
+								<button type="button" data-toggle="modal" data-target="#tambah_akun" class="btn btn-primary"><i class="fa fa-plus-circle"></i>Tambah Data</button>
 								<br><hr>
 								<table id="example1" class="table table-hover">
 									<thead>
@@ -33,7 +30,7 @@ if ($this->session->flashdata('pesan') == TRUE) {
 											<th>NIK</th>
 											<th>Jabatan</th>
 											<th>Email</th>
-											<th style="width:190px;text-align: center">Opsi</th>
+											<th style="width:75px;text-align: center">Opsi</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -45,9 +42,9 @@ if ($this->session->flashdata('pesan') == TRUE) {
 												<td><?php echo $row->jabatan; ?></td>
 												<td><?php echo $row->email; ?></td>
 												<td>
-													<button type="button" style="width: 70px" onclick="ambilDataAkun('<?php echo $row->id ?>')" class="btn btn-success  btn-sm">Edit</button>
+													<button type="button" onclick="ambilDataAkun('<?php echo $row->id ?>')" class="btn btn-success  btn-sm"><i class="fa fa-edit"></i></button>
 
-													<a href="<?php echo base_url('hapus_akun/' . $row->id) ?>" class="btn btn-danger  btn-sm">Hapus</a>
+													<a href="<?php echo base_url('hapus_akun/' . $row->id) ?>" class="btn btn-danger  btn-sm"><i class="fa fa-trash"></i></a>
 												</td>
 											</tr>
 										<?php endforeach ?>
@@ -59,9 +56,6 @@ if ($this->session->flashdata('pesan') == TRUE) {
 						</div>
 					</div>
 			</form>
-		</div>
-	</div>
-</div>
 
 <!-- Modal Tambah -->
 <div class="modal fade" id="tambah_akun" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

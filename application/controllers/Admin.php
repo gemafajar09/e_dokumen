@@ -11,6 +11,7 @@ Class Admin extends CI_Controller
         $this->load->model('M_admin');
         $this->load->library('pagination');
         $this->load->model('M_informasi');
+        $this->load->model('M_count');
 	}
 // awal login
     public function index()
@@ -128,6 +129,12 @@ Class Admin extends CI_Controller
         $data['start'] = $this->uri->segment(3);
         $data['user'] = $this->db->GET_WHERE('pengguna', ['nik' => $this->session->userdata('nik')])->row_array();
         $data['informasi'] = $this->M_informasi->tampilInformasi2($config['per_page'], $data['start']);
+        $data['upload'] = $this->M_count->hitungUploadFile();
+        $data['download'] = $this->M_count->hitungDownloadFile();
+        $data['jumlah_upload'] = $this->M_admin->countUpload();
+        $data['jumlah_download'] = $this->M_admin->countDownload();
+        $data['jumlah_berita'] = $this->M_admin->countBerita();
+        // $data['jumlah_download'] = $this->M_admin->countDownload();
         $this->template->utama('home', $data);
     }
 

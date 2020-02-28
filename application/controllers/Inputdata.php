@@ -13,6 +13,7 @@ Class Inputdata extends CI_Controller
     public function dokumen()
     {
         $data['user'] =$this->db->GET_WHERE('pengguna',['nik' => $this->session->userdata('nik')])->row_array();
+        $data['kabupaten'] = $this->M_inputData->kabupaten();
         $this->template->utama('inputdata/dokumen',$data);
     }
 
@@ -63,6 +64,7 @@ Class Inputdata extends CI_Controller
     public function foto()
     {
         $data['user'] =$this->db->GET_WHERE('pengguna',['nik' => $this->session->userdata('nik')])->row_array();
+        $data['kabupaten'] = $this->M_inputData->kabupaten();
         $this->template->utama('inputdata/foto',$data);
     }
 

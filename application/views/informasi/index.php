@@ -12,22 +12,18 @@ if ($this->session->flashdata('pesan') == TRUE) {
     )
   </script>
 <?php } ?>
-<div class="box">
-  <div class="box-header">
-    <div class="box-body">
-
 
       <div class="row">
         <div class="col-md-1">
         </div>
-        <div class="col-md-10 thumbnail">
+        <div class="col-md-10">
           <div class="card">
             <div class="card-body">
               <h4>Kelola Informasi</h4>
-              <button type="button" data-toggle="modal" data-target="#tambah_informasi" class="btn btn-primary">Tambah Data</button>
+              <button type="button" data-toggle="modal" data-target="#tambah_informasi" class="btn btn-primary"><i class="fa fa-plus-circle"></i>Tambah Data</button>
               <br>
               <hr>
-              <table id="example1" class="table table-hover">
+              <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th style="width: 20px">No</th>
@@ -36,7 +32,7 @@ if ($this->session->flashdata('pesan') == TRUE) {
                     <th>Tanggal</th>
                     <th>Deskripsi</th>
                     <th>Foto</th>
-                    <th style="width:190px;text-align: center">Opsi</th>
+                    <th style="width:75px;text-align: center">Opsi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -62,8 +58,8 @@ if ($this->session->flashdata('pesan') == TRUE) {
                       </td>
                       <td> <img src="<?php echo base_url('upload/gambar/' . $row->foto) ?>" alt="-" style="width: 100px; height: 100px;"> </td>
                       <td>
-                        <button type="button" style="width: 70px" onclick="ambilDataInformasi('<?php echo $row->id_berita ?>')" class="btn btn-success">Edit</button>
-                        <a href="<?php echo base_url('hapus_informasi/' . $row->id_berita) ?>" class="btn btn-danger">Hapus</a>
+                        <button type="button" onclick="ambilDataInformasi('<?php echo $row->id_berita ?>')" class="btn btn-success"><i class="fa fa-edit"></i></button>
+                        <a href="<?php echo base_url('hapus_informasi/' . $row->id_berita) ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
                   <?php endforeach ?>
@@ -75,71 +71,67 @@ if ($this->session->flashdata('pesan') == TRUE) {
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Modal Tambah -->
-  <div class="modal fade" id="tambah_informasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-lg" role="document">
-      <div class="modal-content ">
-        <div class="modal-header">
-          <center>
-            <h3>Data Informasi</h3>
-          </center>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form name="form1" method="POST" action="<?php echo base_url('tambah_informasi'); ?>" enctype="multipart/form-data">
-            <div class="form-group row">
-              <div class="col-sm-12">
-                <input type="hidden" name="id_berita" id="id_berita">
-                <input type="text" class="form-control" name="judul" id="judul" placeholder="Judul">
-              </div>
+<div class="row">
+    <div class="col-md-4">
+      <!-- Modal Tambah -->
+      <div class="modal fade" id="tambah_informasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-lg" role="document">
+          <div class="modal-content ">
+            <div class="modal-header">
+              <center>
+                <h3>Data Informasi</h3>
+              </center>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <div class="form-group row">
-              <div class="col-sm-12">
-                <input type="text" class="form-control" name="nama_penerbit" id="nama_penerbit" placeholder="Penerbit">
-              </div>
+            <div class="modal-body">
+              <form name="form1" method="POST" action="<?php echo base_url('tambah_informasi'); ?>" enctype="multipart/form-data">
+                <div class="form-group row">
+                  <div class="col-sm-12">
+                    <input type="hidden" name="id_berita" id="id_berita">
+                    <input type="text" class="form-control" name="judul" id="judul" placeholder="Judul">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-12">
+                    <input type="text" class="form-control" name="nama_penerbit" id="nama_penerbit" placeholder="Penerbit">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-12">
+                    <input type="date" class="form-control" name="tanggal" id="tanggal" placeholder="Tanggal">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-12">
+                    <input type="hidden" name="foto_lama" id="foto_lama">
+                    <input type="file" class="form-control" name="foto" id="foto">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-12">
+                    <textarea name="deskripsi" class="ckeditor" id="ckeditor"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-12" align="center">
+                    <button type="submit" class="btn btn-primary" name="simpan" value="SIMPAN"><i> SIMPAN</i></button>
+                    <button type="reset" class="btn btn-warning" name="reset" value="RESET"><i style="color:white"> RESET</></button>
+                  </div>
+                </div>
+              </form>
             </div>
-            <div class="form-group row">
-              <div class="col-sm-12">
-                <input type="date" class="form-control" name="tanggal" id="tanggal" placeholder="Tanggal">
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-sm-12">
-                <input type="hidden" name="foto_lama" id="foto_lama">
-                <input type="file" class="form-control" name="foto[]" id="foto">
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-sm-12">
-                <textarea name="deskripsi" id="editor1" cols="30" rows="10">
-                </textarea>
-                <script>
-                  // Replace the <textarea id="editor1"> with a CKEditor
-                  // instance, using default configuration.
-                  CKEDITOR.replace('editor1');
-                </script>
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-sm-12" align="center">
-                <button type="submit" class="btn btn-primary" name="simpan" value="SIMPAN"><i> SIMPAN</i></button>
-                <button type="reset" class="btn btn-warning" name="reset" value="RESET"><i> RESET</i></button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
+            <div class="modal-footer">
 
-        </div>
+            </div>
 
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+</div>
 
   <script type="text/javascript">
     function ambilDataInformasi(id) {
@@ -154,9 +146,9 @@ if ($this->session->flashdata('pesan') == TRUE) {
           document.getElementById('judul').value = data[0].judul;
           document.getElementById('nama_penerbit').value = data[0].nama_penerbit;
           document.getElementById('tanggal').value = data[0].tanggal;
-          CKEDITOR.instances.editor1.setData(data[0].deskripsi);
+          CKEDITOR.instances.ckeditor.setData(data[0].deskripsi);
           document.getElementById('foto_lama').value = data[0].foto;
-          $("#tambah_informasi").modal('show');
+          $("#tambah_informasi").modal();
         }
       })
     }
